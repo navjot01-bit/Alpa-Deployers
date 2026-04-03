@@ -11,7 +11,7 @@ def preprocess_data(df):
 def save_data(df, path):
     df.to_csv(path, index=False)
 def main():
-    input_path = "data/raw/NPRI_2000-2022.csv"
+    input_path = "data/raw/NPRI_2000-2022.zip"
     output_path = "data/processed/NPRI_2000-2022-cleaned.csv"
     df = load_data(input_path)
     df = preprocess_data(df)
