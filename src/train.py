@@ -27,7 +27,7 @@ def save_model(model, path):
 
 def main():
     input_path = "data/raw/NPRI_2000-2022-cleaned.csv"
-    model_path = "model.pkl"
+    model_path = "models/model.pkl"
 
     df = load_data(input_path)
     model = train_model(df)
