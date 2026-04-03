@@ -1,0 +1,10 @@
+data:
+  raw_path: data/raw/NPRI_sample.csv
+  processed_path: data/processed/processed.csv
+
+model:
+  random_state: 42
+  test_size: 0.2
+
+features:
+  target: target_column_name
