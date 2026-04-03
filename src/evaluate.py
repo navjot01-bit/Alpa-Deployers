@@ -1,19 +1,16 @@
-from utils.config import load_config
 import pandas as pd
-import argparse
 
+def load_data(path):
+    df = pd.read_csv(path)
+    return df
+def evaluate_data(df):
+    print("Rows:", len(df))
+    print("Columns:", len(df.columns))
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default="config/default.yaml")
-    args = parser.parse_args()
-
-    cfg = load_config(args.config)
-
-    processed_path = cfg["data"]["processed_path"]
-
-    df = pd.read_csv(processed_path)
-
-    print("Evaluation data loaded:", df.shape)
+    input_path = "data/processed/NPRI_2000-2022-cleaned.csv"
+    df = load_data(input_path)
+    evaluate_data(df)
+    print("Evaluation complete.")
 
 if __name__ == "__main__":
     main()
