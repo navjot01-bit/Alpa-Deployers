@@ -1,21 +1,30 @@
-# Preprocessing script for NPRI project
-from utils.config import load_config
 import pandas as pd
 
+
+def load_data(path):
+    df = pd.read_csv(path)
+    return df
+
+
+def preprocess_data(df):
+    df = df.drop_duplicates()
+    return df
+
+
+def save_data(df, path):
+    df.to_csv(path, index=False)
+
+
 def main():
-    cfg = load_config("config/default.yaml")
+    input_path = "data/raw/NPRI_2000-2022.csv"
+    output_path = "data/raw/NPRI_2000-2022-cleaned.csv"
 
-    raw_path = cfg["data"]["raw_path"]
-    processed_path = cfg["data"]["processed_path"]
+    df = load_data(input_path)
+    df = preprocess_data(df)
+    save_data(df, output_path)
 
-    df = pd.read_csv(raw_path)
+    print("Preprocessing complete. Cleaned file saved.")
 
-    print("Data loaded:", df.shape)
-
-    df.to_csv(processed_path, index=False)
-
-    print("Saved processed data")
 
 if __name__ == "__main__":
     main()
-  
