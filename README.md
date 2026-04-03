@@ -1,14 +1,25 @@
 # Alpa-Deployers
 
-CMPT 2500 Project Repository
+CMPT 2500 ML project using NPRI data.
 
-## Structure
-- src/ -code files
-- data/raw/ - dataset
-- notebooks/ - notebook work
+## Folders
+- src - code files
+- data/raw - raw data
+- data/processed - cleaned data and predictions
+- models - saved model
+- config - config files
+- tests - test files
+- notebooks - notebook work
 
 ## Files
 - preprocess.py
 - train.py
 - predict.py
 - evaluate.py
+
+## Run
+- make preprocess
+- make train
+- make predict
+- make evaluate
+- make test
