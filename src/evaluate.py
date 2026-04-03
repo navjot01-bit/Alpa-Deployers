@@ -1,8 +1,16 @@
 # Evaluation script for NPRI project
 
+from utils.config import load_config
+import pandas as pd
+
 def main():
-    print("Evaluation started")
+    cfg = load_config("config/default.yaml")
+
+    processed_path = cfg["data"]["processed_path"]
+
+    df = pd.read_csv(processed_path)
+
+    print("Evaluation data loaded:", df.shape)
 
 if __name__ == "__main__":
     main()
-  
